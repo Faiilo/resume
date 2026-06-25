@@ -1,0 +1,69 @@
+<div class="self-development-container">
+  <div class="container">
+    <h1 class="page-title">Саморазвитие</h1>
+    <p class="page-subtitle">Конференции, социальная активность и учебные материалы</p>
+
+    <!-- Конференции -->
+    <section class="activity-section" *ngIf="conferences.length > 0">
+      <h2 class="section-title">Конференции и мероприятия</h2>
+      <div class="activities-grid">
+        <div *ngFor="let activity of conferences" class="activity-card">
+          <div class="activity-image" *ngIf="activity.imageUrl">
+            <img [src]="activity.imageUrl" [alt]="activity.title">
+          </div>
+          <div class="activity-content">
+            <h3 class="activity-title">{{ activity.title }}</h3>
+            <p class="activity-description">{{ activity.description }}</p>
+            <div class="activity-meta">
+              <span class="activity-date">{{ activity.date }}</span>
+              <span class="activity-location" *ngIf="activity.location">{{ activity.location }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Социальная активность -->
+    <section class="activity-section" *ngIf="socialActivities.length > 0">
+      <h2 class="section-title">Общественная деятельность</h2>
+      <div class="activities-grid">
+        <div *ngFor="let activity of socialActivities" class="activity-card">
+          <div class="activity-image" *ngIf="activity.imageUrl">
+            <img [src]="activity.imageUrl" [alt]="activity.title">
+          </div>
+          <div class="activity-content">
+            <h3 class="activity-title">{{ activity.title }}</h3>
+            <p class="activity-description">{{ activity.description }}</p>
+            <div class="activity-meta">
+              <span class="activity-date">{{ activity.date }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Учебные материалы -->
+    <section class="activity-section" *ngIf="notes.length > 0">
+      <h2 class="section-title">Учебные материалы</h2>
+      <div class="notes-grid">
+        <div *ngFor="let note of notes" class="note-card">
+          <div class="note-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="note-content">
+            <h3 class="note-title">{{ note.title }}</h3>
+            <p class="note-description">{{ note.description }}</p>
+            <a *ngIf="note.link" [href]="note.link" target="_blank" class="note-link">
+              <i class="fas fa-external-link-alt"></i> Открыть
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Если активностей нет -->
+    <div *ngIf="activities.length === 0" class="empty-state">
+      <p>Пока нет добавленных мероприятий</p>
+    </div>
+  </div>
+</div>

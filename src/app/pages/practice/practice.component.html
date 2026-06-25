@@ -1,0 +1,59 @@
+<div class="practice-container">
+  <div class="container">
+    <h1 class="page-title">Практика и стажировки</h1>
+    <p class="page-subtitle">Опыт работы, стажировки и документы практики</p>
+
+    <!-- Резюме -->
+    <section class="practice-section">
+      <h2 class="section-title">Резюме</h2>
+      <div class="resume-card">
+        <div class="resume-content">
+          <h3>{{ practiceInfo.resume.title }}</h3>
+          <p>{{ practiceInfo.resume.description }}</p>
+          <div class="resume-links">
+            <a [href]="practiceInfo.resume.fileUrl" target="_blank" class="btn primary-btn">
+              <i class="fas fa-file-pdf"></i> Скачать PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Документы практики -->
+    <section class="practice-section">
+      <h2 class="section-title">Документы практики</h2>
+      <div class="documents-card">
+        <p>{{ practiceInfo.documents.description }}</p>
+        <div class="documents-links">
+          <a [href]="practiceInfo.documents.googleDriveLink" target="_blank" class="btn primary-btn">
+            <i class="fab fa-google-drive"></i> Готовые документы
+          </a>
+          <a [href]="practiceInfo.documents.templatesLink" target="_blank" class="btn secondary-btn">
+            <i class="fas fa-file-alt"></i> Шаблоны
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Задания с практики -->
+    <section class="practice-section">
+      <h2 class="section-title">Задания с практики</h2>
+      <div class="tasks-grid">
+        <div *ngFor="let task of practiceInfo.practiceTasks" class="task-card">
+          <div class="task-content">
+            <h3 class="task-title">{{ task.title }}</h3>
+            <p class="task-description">{{ task.description }}</p>
+            <div class="task-technologies">
+              <span *ngFor="let tech of task.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <a *ngIf="task.githubUrl" [href]="task.githubUrl" target="_blank" class="github-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="projects-container">
+  <div class="container">
+    <h1 class="page-title">Мои проекты</h1>
+    <p class="page-subtitle">Здесь собраны все мои проекты, олимпиады, кейсы и курсовые работы</p>
+
+    <!-- Олимпиады и конкурсы -->
+    <section class="project-section" *ngIf="olympiadProjects.length > 0">
+      <h2 class="section-title">Олимпиады и конкурсы</h2>
+      <div class="projects-grid">
+        <div *ngFor="let project of olympiadProjects" class="project-card">
+          <div class="project-image" *ngIf="project.screenshotUrl">
+            <img [src]="project.screenshotUrl" [alt]="project.title">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <div class="project-links">
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn github-btn">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.certificateUrl" [href]="project.certificateUrl" target="_blank" class="link-btn cert-btn">
+                <i class="fas fa-certificate"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кейсы и стажировки -->
+    <section class="project-section" *ngIf="caseProjects.length > 0 || internshipProjects.length > 0">
+      <h2 class="section-title">Кейсы и стажировки</h2>
+      <div class="projects-grid">
+        <div *ngFor="let project of caseProjects" class="project-card">
+          <div class="project-image" *ngIf="project.screenshotUrl">
+            <img [src]="project.screenshotUrl" [alt]="project.title">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <div class="project-links">
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn github-btn">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.certificateUrl" [href]="project.certificateUrl" target="_blank" class="link-btn cert-btn">
+                <i class="fas fa-certificate"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+        <div *ngFor="let project of internshipProjects" class="project-card">
+          <div class="project-image" *ngIf="project.screenshotUrl">
+            <img [src]="project.screenshotUrl" [alt]="project.title">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <div class="project-links">
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn github-btn">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.certificateUrl" [href]="project.certificateUrl" target="_blank" class="link-btn cert-btn">
+                <i class="fas fa-certificate"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Проекты с практики -->
+    <section class="project-section" *ngIf="practiceProjects.length > 0">
+      <h2 class="section-title">Проекты с практики</h2>
+      <div class="projects-grid">
+        <div *ngFor="let project of practiceProjects" class="project-card">
+          <div class="project-image" *ngIf="project.screenshotUrl">
+            <img [src]="project.screenshotUrl" [alt]="project.title">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <div class="project-links">
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn github-btn">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.certificateUrl" [href]="project.certificateUrl" target="_blank" class="link-btn cert-btn">
+                <i class="fas fa-certificate"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Курсовые проекты -->
+    <section class="project-section" *ngIf="courseworkProjects.length > 0">
+      <h2 class="section-title">Курсовые проекты</h2>
+      <div class="projects-grid">
+        <div *ngFor="let project of courseworkProjects" class="project-card">
+          <div class="project-image" *ngIf="project.screenshotUrl">
+            <img [src]="project.screenshotUrl" [alt]="project.title">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+            <div class="project-links">
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn github-btn">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.certificateUrl" [href]="project.certificateUrl" target="_blank" class="link-btn cert-btn">
+                <i class="fas fa-certificate"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Если проектов нет -->
+    <div *ngIf="allProjects.length === 0" class="empty-state">
+      <p>Пока нет добавленных проектов</p>
+    </div>
+  </div>
+</div>

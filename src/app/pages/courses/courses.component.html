@@ -1,0 +1,32 @@
+<div class="courses-container">
+  <div class="container">
+    <h1 class="page-title">Мои курсы</h1>
+    <p class="page-subtitle">Сертификаты и курсы от ведущих IT-компаний и образовательных платформ</p>
+
+    <!-- Курсы по платформам -->
+    <div *ngFor="let platform of platforms" class="platform-section">
+      <h2 class="platform-title">{{ platform }}</h2>
+      <div class="courses-grid">
+        <div *ngFor="let course of groupedCourses[platform]" class="course-card">
+          <div class="course-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">{{ course.title }}</h3>
+            <p class="course-description" *ngIf="course.description">{{ course.description }}</p>
+            <div class="course-meta">
+              <a [href]="course.certificateUrl" target="_blank" class="cert-btn">
+                <i class="fas fa-file-pdf"></i> Сертификат
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Если курсов нет -->
+    <div *ngIf="courses.length === 0" class="empty-state">
+      <p>Пока нет пройденных курсов</p>
+    </div>
+  </div>
+</div>
