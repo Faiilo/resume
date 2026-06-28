@@ -102,9 +102,9 @@ export const PROJECTS: Project[] = [
     id: 11,
     title: 'Сайт организации',
     description: 'Разработка корпоративного сайта для организации, в которой проходила практика. Реализация маркетингового лендинга, резервного копирования и HTTPS.',
-    technologies: ['Astro', 'Headless CMS', '1C-Bitrix', 'Webflow', 'Framer'],
-    // screenshotUrl: 'assets/practice/company-site/screenshot.jpg',
-    // githubUrl: 'https://github.com/your-username/practice-company-site',
+    technologies: ['Bitrix24'],
+    githubUrl: 'https://github.com/Faiilo/college-projects/tree/main/Практика/Сайт_организации',
+    screenshotUrl: 'assets/projects/migrant.png',
     category: 'practice',
   }
 ];
