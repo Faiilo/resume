@@ -40,8 +40,8 @@ export const PRACTICE_INFO = {
       title: 'Сайт организации',
       description: 'Разработка сайта для организации. Включает: восстановление из резервной копии, HTTPS, резервное копирование БД, анализ эффективности, улучшение юзабилити.',
       technologies: ['Astro', 'Headless CMS', '1C-Bitrix', 'Webflow', 'Framer', 'PostgreSQL'],
-      // githubUrl: 'https://github.com/your-username/practice-company-site',
-      // screenshotUrl: 'assets/practice/company-site/screenshot.jpg'
+      githubUrl: 'https://github.com/Faiilo/college-projects/tree/main/Практика/Сайт_организации',
+      screenshotUrl: 'assets/projects/migrant.png'
     },
     {
       id: 2,
